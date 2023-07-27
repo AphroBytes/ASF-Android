@@ -8,7 +8,7 @@ echo "You need just drink a tea, i just install ArchiSteamFarm. Please wait and 
 echo ""
 
 # Update pkg
-pkg update -y
+pkg update -y --force
 
 # Installing packages
 pkg install proot-distro -y
@@ -60,4 +60,5 @@ else
   clear
   echo "Unknown architecture. Please install ArchiSteamFarm manually."
   echo ""
+  echo "Your architecture: $arch. Please report this on Github Issues"
 fi
