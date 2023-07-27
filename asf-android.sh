@@ -30,10 +30,11 @@ cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/
 
 # Creating a folder for ASF and IPC config
 mkdir asf
-cd asf
+cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/asf
 mkdir config
-cd config
+cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/asf/config
 curl -L -O https://github.com/sevcator/ASF-Android/raw/main/IPC.config
+cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/asf
 
 # Downloading ArchiSteamFarm
 arch=$(dpkg --print-architecture)
