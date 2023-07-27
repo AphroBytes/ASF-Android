@@ -8,7 +8,7 @@ echo "You need just drink a tea, i just install ArchiSteamFarm. Please wait and 
 echo ""
 
 # Update pkg
-pkg update -y --force
+pkg update -f -y
 
 # Installing packages
 pkg install proot-distro -y
