@@ -7,9 +7,8 @@ echo ""
 echo "You need just drink a tea, i just install ArchiSteamFarm. Please wait and chill."
 echo ""
 
-# Update / upgrading pkg
+# Update pkg
 pkg update -y
-pkg upgrade -y
 
 # Installing packages
 pkg install proot-distro -y
