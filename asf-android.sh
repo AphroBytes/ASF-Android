@@ -18,7 +18,7 @@ pkg install proot-distro -y
 proot-distro install ubuntu
 
 # Installing requirements for ArchiSteamFarm
-proot-distro login ubuntu -- bash -c 'apt install libicu70 mono-runtime -y'
+proot-distro login ubuntu -- bash -c 'apt update -y && apt upgrade -y && apt install libicu70 mono-runtime -y'
 
 # Configure Autostart & motd
 echo "proot-distro login ubuntu --fix-low-ports -- bash -c 'DOTNET_GCHeapHardLimit=1C0000000 && /root/asf/ArchiSteamFarm'" >> /data/data/com.termux/files/usr/etc/bash.bashrc
