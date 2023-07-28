@@ -23,7 +23,7 @@ proot-distro login ubuntu -- bash -c 'apt update -y && apt upgrade -y && apt ins
 proot-distro login ubuntu -- bash -c 'useradd -m noroot'
 
 # Configure Autostart & motd
-echo "proot-distro login ubuntu --user noroot --fix-low-ports -- bash -c 'DOTNET_GCHeapHardLimit=1C0000000 && /root/asf/ArchiSteamFarm'" >> /data/data/com.termux/files/usr/etc/bash.bashrc
+echo "proot-distro login ubuntu --user noroot --fix-low-ports -- bash -c 'DOTNET_GCHeapHardLimit=1C0000000 && /home/noroot/asf/ArchiSteamFarm'" >> /data/data/com.termux/files/usr/etc/bash.bashrc
 echo "Welcome to Termux!" > /data/data/com.termux/files/usr/etc/motd
 echo " " >> /data/data/com.termux/files/usr/etc/motd
 
@@ -42,31 +42,38 @@ cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/
 arch=$(dpkg --print-architecture)
 
 if [ "$arch" = "arm" ]; then
-  curl -s https://api.github.com/repos/JustArchiNET/ArchiSteamFarm/latest \
-  | grep "browser_download_url.*linux-arm.zip" \
-  | cut -d : -f 2,3 \
-  | tr -d \" \
-  | xargs -n 1 curl -L -O
-  unzip ASF-linux-arm.zip
+  echo 'echo Downloading lasest ASF' > /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  echo 'curl -s https://api.github.com/repos/JustArchiNET/ArchiSteamFarm/latest \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  echo '| grep "browser_download_url.*linux-arm.zip" \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  echo '| cut -d : -f 2,3 \' >> /data/data/com.termux/files/home/asf-lasest-dw.sh
+  echo '| tr -d \" \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  echo '| xargs -n 1 curl -L -O -O /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf.zip' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf.zip
   clear
   echo "All right!"
   echo ""
 elif [ "$arch" = "armhf" ]; then
-  curl -s https://api.github.com/repos/JustArchiNET/ArchiSteamFarm/latest \
-  | grep "browser_download_url.*linux-arm.zip" \
-  | cut -d : -f 2,3 \
-  | tr -d \" \
-  | xargs -n 1 curl -L -O
-  unzip ASF-linux-arm.zip
+  echo 'echo Downloading lasest ASF' > /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  echo 'curl -s https://api.github.com/repos/JustArchiNET/ArchiSteamFarm/latest \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  echo '| grep "browser_download_url.*linux-arm.zip" \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  echo '| cut -d : -f 2,3 \' >> /data/data/com.termux/files/home/asf-lasest-dw.sh
+  echo '| tr -d \" \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  echo '| xargs -n 1 curl -L -O /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf.zip' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf.zip
   clear
   echo "All right!"
   echo ""
 elif [ "$arch" = "arm64" ]; then
-  curl -s https://api.github.com/repos/JustArchiNET/ArchiSteamFarm/latest \
-  | grep "browser_download_url.*linux-arm64.zip" \
-  | cut -d : -f 2,3 \
-  | tr -d \" \
-  | xargs -n 1 curl -L -O
+  echo 'echo Downloading lasest ASF' > /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  echo 'curl -s https://api.github.com/repos/JustArchiNET/ArchiSteamFarm/latest \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  echo '| grep "browser_download_url.*linux-arm64.zip" \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  echo '| cut -d : -f 2,3 \' >> /data/data/com.termux/files/home/asf-lasest-dw.sh
+  echo '| tr -d \" \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  echo '| xargs -n 1 curl -L -O /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf.zip' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
+  unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf.zip
   clear
   echo "All right!"
   echo ""
