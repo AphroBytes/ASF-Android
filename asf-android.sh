@@ -1,10 +1,9 @@
 # Information script
 clear
 echo "Welcome to my script. Created by sevcator."
+echo "Original (tutorial): https://steamcommunity.com/sharedfiles/filedetails/?id=2570297945"
 echo ""
-echo "Original tutorial: https://steamcommunity.com/sharedfiles/filedetails/?id=2570297945"
-echo ""
-echo "Auto-Install ArchiSteamFarm"
+echo "Auto-Install ArchiSteamFarm on Termux"
 echo ""
 
 # Update pkg
@@ -72,6 +71,6 @@ elif [ "$arch" = "aarch64" ]; then
 else
   clear
   echo "Unknown architecture. Please install ArchiSteamFarm manually."
+  echo "Your architecture: $arch. Please report this on GitHub Issues."
   echo ""
-  echo "Your architecture: $arch. Please report this on GitHub Issues"
 fi
