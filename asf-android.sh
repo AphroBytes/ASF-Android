@@ -42,38 +42,23 @@ cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/
 arch=$(dpkg --print-architecture)
 
 if [ "$arch" = "arm" ]; then
-  echo 'echo Downloading lasest ASF' > /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  echo 'curl -s https://api.github.com/repos/JustArchiNET/ArchiSteamFarm/latest \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  echo '| grep "browser_download_url.*linux-arm.zip" \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  echo '| cut -d : -f 2,3 \' >> /data/data/com.termux/files/home/asf-lasest-dw.sh
-  echo '| tr -d \" \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  echo '| xargs -n 1 curl -L -O -O /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf.zip' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf.zip
+  curl -L https://raw.githubusercontent.com/sevcator/ASF-Android/main/arm-dw.sh -o /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/arm-dw.sh
+  bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/arm-dw.sh
+  unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/ASF-linux-arm.zip
   clear
   echo "All right!"
   echo ""
 elif [ "$arch" = "armhf" ]; then
-  echo 'echo Downloading lasest ASF' > /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  echo 'curl -s https://api.github.com/repos/JustArchiNET/ArchiSteamFarm/latest \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  echo '| grep "browser_download_url.*linux-arm.zip" \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  echo '| cut -d : -f 2,3 \' >> /data/data/com.termux/files/home/asf-lasest-dw.sh
-  echo '| tr -d \" \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  echo '| xargs -n 1 curl -L -O /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf.zip' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf.zip
+  curl -L https://raw.githubusercontent.com/sevcator/ASF-Android/main/arm-dw.sh -o /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/arm-dw.sh
+  bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/arm-dw.sh
+  unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/ASF-linux-arm.zip
   clear
   echo "All right!"
   echo ""
 elif [ "$arch" = "arm64" ]; then
-  echo 'echo Downloading lasest ASF' > /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  echo 'curl -s https://api.github.com/repos/JustArchiNET/ArchiSteamFarm/latest \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  echo '| grep "browser_download_url.*linux-arm64.zip" \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  echo '| cut -d : -f 2,3 \' >> /data/data/com.termux/files/home/asf-lasest-dw.sh
-  echo '| tr -d \" \' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  echo '| xargs -n 1 curl -L -O /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf.zip' >> /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf-lasest-dw.sh
-  unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/asf.zip
+  curl -L https://raw.githubusercontent.com/sevcator/ASF-Android/main/arm64-dw.sh -o /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/arm64-dw.sh
+  bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/arm64-dw.sh
+  unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/ASF-linux-arm64.zip
   clear
   echo "All right!"
   echo ""
