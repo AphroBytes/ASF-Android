@@ -23,7 +23,7 @@ proot-distro login ubuntu -- bash -c 'apt update -y && apt upgrade -y && apt ins
 proot-distro login ubuntu -- bash -c 'useradd -m noroot'
 
 # Configure Autostart & motd
-echo "proot-distro login ubuntu --user noroot --fix-low-ports -- bash -c 'DOTNET_GCHeapHardLimit=1C0000000 && /home/noroot/asf/ArchiSteamFarm'" >> /data/data/com.termux/files/usr/etc/bash.bashrc
+echo "proot-distro login ubuntu --user noroot --fix-low-ports -- bash -c 'export DOTNET_GCHeapHardLimit=1C0000000 && /home/noroot/asf/ArchiSteamFarm'" >> /data/data/com.termux/files/usr/etc/bash.bashrc
 echo "Welcome to Termux!" > /data/data/com.termux/files/usr/etc/motd
 echo " " >> /data/data/com.termux/files/usr/etc/motd
 
