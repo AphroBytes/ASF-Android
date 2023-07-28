@@ -1,5 +1,5 @@
 # ASF-Android
-Install ArchiSteamFarm in Android using one command
+Install [ArchiSteamFarm](https://github.com/JustArchiNET/ArchiSteamFarm) in Android using one command
 
 Get [Termux](https://f-droid.org/ru/packages/com.termux/), open and enter the command:
 ```
