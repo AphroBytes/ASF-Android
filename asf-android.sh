@@ -62,6 +62,13 @@ elif [ "$arch" = "arm64" ]; then
   clear
   echo "All right!"
   echo ""
+elif [ "$arch" = "aarch64" ]; then
+  curl -L https://raw.githubusercontent.com/sevcator/ASF-Android/main/arm64-dw.sh -o /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/arm64-dw.sh
+  bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/arm64-dw.sh
+  unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/ASF-linux-arm64.zip
+  clear
+  echo "All right!"
+  echo ""
 else
   clear
   echo "Unknown architecture. Please install ArchiSteamFarm manually."
