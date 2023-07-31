@@ -1,10 +1,23 @@
 # Information script
 clear
-echo "Welcome to my script. Created by sevcator."
-echo "Original (tutorial): https://steamcommunity.com/sharedfiles/filedetails/?id=2570297945"
+echo "╭━━━┳━━━┳━━━╮╱╭━━━╮╱╱╱╱╭╮╱╱╱╱╱╱╱╭╮"
+echo "┃╭━╮┃╭━╮┃╭━━╯╱┃╭━╮┃╱╱╱╱┃┃╱╱╱╱╱╱╱┃┃"
+echo "┃┃╱┃┃╰━━┫╰━━╮╱┃┃╱┃┣━╮╭━╯┣━┳━━┳┳━╯┃"
+echo "┃╰━╯┣━━╮┃╭━┳┻━┫╰━╯┃╭╮┫╭╮┃╭┫╭╮┣┫╭╮┃"
+echo "┃╭━╮┃╰━╯┃┃╱╰━━┫╭━╮┃┃┃┃╰╯┃┃┃╰╯┃┃╰╯┃"
+echo "╰╯╱╰┻━━━┻╯╱╱╱╱╰╯╱╰┻╯╰┻━━┻╯╰━━┻┻━━╯"
+echo "      github: sevcator/ASF-Android"
 echo ""
-echo "Auto-Install ArchiSteamFarm on Termux"
+echo "ArchiSteamFarm in Android Device"
 echo ""
+
+# Check if script is runned in Termux
+if [ -n "$TERMUX_VERSION" ]; then
+   echo "Executed in Termux $TERMUX_VERSION"
+else
+   echo "This script only for Termux!"
+   exit
+fi
 
 # Update pkg
 pkg update -y -o Dpkg::Options::="--force-confnew"
@@ -22,6 +35,12 @@ proot-distro login ubuntu -- bash -c 'apt update -y && apt upgrade -y && apt ins
 proot-distro login ubuntu -- bash -c 'useradd -m noroot'
 
 # Configure Autostart & motd
+echo 'if telnet "127.0.0.1" "1337" </dev/null 2>&1 | > grep -q "Connected"; then' >> data/data/com.termux/files/usr/etc/bash.bashrc
+echo '  echo "Server is running. Ignoring next actions..."' >> data/data/com.termux/files/usr/etc/bash.bashrc
+echo '  exit' >> data/data/com.termux/files/usr/etc/bash.bashrc
+echo 'else' >> data/data/com.termux/files/usr/etc/bash.bashrc
+echo '  echo "Server not running!"' >> data/data/com.termux/files/usr/etc/bash.bashrc
+echo 'fi' >> data/data/com.termux/files/usr/etc/bash.bashrc
 echo "proot-distro login ubuntu --user noroot --fix-low-ports -- bash -c 'export DOTNET_GCHeapHardLimit=1C0000000 && /home/noroot/asf/ArchiSteamFarm'" >> /data/data/com.termux/files/usr/etc/bash.bashrc
 echo "Welcome to Termux!" > /data/data/com.termux/files/usr/etc/motd
 echo " " >> /data/data/com.termux/files/usr/etc/motd
