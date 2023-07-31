@@ -38,7 +38,7 @@ proot-distro login ubuntu -- bash -c 'useradd -m noroot'
 echo 'if telnet "127.0.0.1" "1337" </dev/null 2>&1 | grep -q "Connected"; then' >> /data/data/com.termux/files/usr/etc/bash.bashrc
 echo '  echo "Server is running. ASF will not again run..." && echo ""' >> /data/data/com.termux/files/usr/etc/bash.bashrc
 echo 'else' >> /data/data/com.termux/files/usr/etc/bash.bashrc
-echo '  echo "Server not running!" && echo "Running ASF..." && echo ""' >> /data/data/com.termux/files/usr/etc/bash.bashrc
+echo '  echo "Server not running!" && echo "Running ASF..." && echo "" && echo "If you want use other session Termux" && echo "please wait when ipc server" && echo "and make new session"' >> /data/data/com.termux/files/usr/etc/bash.bashrc
 echo "proot-distro login ubuntu --user noroot --fix-low-ports -- bash -c 'export DOTNET_GCHeapHardLimit=1C0000000 && /home/noroot/asf/ArchiSteamFarm'" >> /data/data/com.termux/files/usr/etc/bash.bashrc
 echo 'fi' >> /data/data/com.termux/files/usr/etc/bash.bashrc
 echo "Welcome to Termux!" > /data/data/com.termux/files/usr/etc/motd
