@@ -35,13 +35,12 @@ proot-distro login ubuntu -- bash -c 'apt update -y && apt upgrade -y && apt ins
 proot-distro login ubuntu -- bash -c 'useradd -m noroot'
 
 # Configure Autostart & motd
-echo 'if telnet "127.0.0.1" "1337" </dev/null 2>&1 | > grep -q "Connected"; then' >> /data/data/com.termux/files/usr/etc/bash.bashrc
-echo '  echo "Server is running. Ignoring next actions..."' >> /data/data/com.termux/files/usr/etc/bash.bashrc
-echo '  exit' >> /data/data/com.termux/files/usr/etc/bash.bashrc
+echo 'if telnet "127.0.0.1" "1337" </dev/null 2>&1 | grep -q "Connected"; then' >> /data/data/com.termux/files/usr/etc/bash.bashrc
+echo '  echo "Server is running. ASF will not again run..." && echo ""' >> /data/data/com.termux/files/usr/etc/bash.bashrc
 echo 'else' >> /data/data/com.termux/files/usr/etc/bash.bashrc
-echo '  echo "Server not running!"' >> /data/data/com.termux/files/usr/etc/bash.bashrc
-echo 'fi' >> /data/data/com.termux/files/usr/etc/bash.bashrc
+echo '  echo "Server not running!" && echo "Running ASF..." && echo ""' >> /data/data/com.termux/files/usr/etc/bash.bashrc
 echo "proot-distro login ubuntu --user noroot --fix-low-ports -- bash -c 'export DOTNET_GCHeapHardLimit=1C0000000 && /home/noroot/asf/ArchiSteamFarm'" >> /data/data/com.termux/files/usr/etc/bash.bashrc
+echo 'fi' >> /data/data/com.termux/files/usr/etc/bash.bashrc
 echo "Welcome to Termux!" > /data/data/com.termux/files/usr/etc/motd
 echo " " >> /data/data/com.termux/files/usr/etc/motd
 
@@ -64,6 +63,16 @@ if [ "$arch" = "arm" ]; then
   bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/arm-dw.sh
   unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/ASF-linux-arm.zip
   clear
+  echo "╭━━━┳━━━┳━━━╮╱╭━━━╮╱╱╱╱╭╮╱╱╱╱╱╱╱╭╮"
+  echo "┃╭━╮┃╭━╮┃╭━━╯╱┃╭━╮┃╱╱╱╱┃┃╱╱╱╱╱╱╱┃┃"
+  echo "┃┃╱┃┃╰━━┫╰━━╮╱┃┃╱┃┣━╮╭━╯┣━┳━━┳┳━╯┃"
+  echo "┃╰━╯┣━━╮┃╭━┳┻━┫╰━╯┃╭╮┫╭╮┃╭┫╭╮┣┫╭╮┃"
+  echo "┃╭━╮┃╰━╯┃┃╱╰━━┫╭━╮┃┃┃┃╰╯┃┃┃╰╯┃┃╰╯┃"
+  echo "╰╯╱╰┻━━━┻╯╱╱╱╱╰╯╱╰┻╯╰┻━━┻╯╰━━┻┻━━╯"
+  echo "      github: sevcator/ASF-Android"
+  echo ""
+  echo "ArchiSteamFarm in Android Device"
+  echo ""
   echo "All right!"
   echo ""
 elif [ "$arch" = "armhf" ]; then
@@ -71,6 +80,16 @@ elif [ "$arch" = "armhf" ]; then
   bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/arm-dw.sh
   unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/ASF-linux-arm.zip
   clear
+  echo "╭━━━┳━━━┳━━━╮╱╭━━━╮╱╱╱╱╭╮╱╱╱╱╱╱╱╭╮"
+  echo "┃╭━╮┃╭━╮┃╭━━╯╱┃╭━╮┃╱╱╱╱┃┃╱╱╱╱╱╱╱┃┃"
+  echo "┃┃╱┃┃╰━━┫╰━━╮╱┃┃╱┃┣━╮╭━╯┣━┳━━┳┳━╯┃"
+  echo "┃╰━╯┣━━╮┃╭━┳┻━┫╰━╯┃╭╮┫╭╮┃╭┫╭╮┣┫╭╮┃"
+  echo "┃╭━╮┃╰━╯┃┃╱╰━━┫╭━╮┃┃┃┃╰╯┃┃┃╰╯┃┃╰╯┃"
+  echo "╰╯╱╰┻━━━┻╯╱╱╱╱╰╯╱╰┻╯╰┻━━┻╯╰━━┻┻━━╯"
+  echo "      github: sevcator/ASF-Android"
+  echo ""
+  echo "ArchiSteamFarm in Android Device"
+  echo ""
   echo "All right!"
   echo ""
 elif [ "$arch" = "arm64" ]; then
@@ -78,6 +97,16 @@ elif [ "$arch" = "arm64" ]; then
   bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/arm64-dw.sh
   unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/ASF-linux-arm64.zip
   clear
+  echo "╭━━━┳━━━┳━━━╮╱╭━━━╮╱╱╱╱╭╮╱╱╱╱╱╱╱╭╮"
+  echo "┃╭━╮┃╭━╮┃╭━━╯╱┃╭━╮┃╱╱╱╱┃┃╱╱╱╱╱╱╱┃┃"
+  echo "┃┃╱┃┃╰━━┫╰━━╮╱┃┃╱┃┣━╮╭━╯┣━┳━━┳┳━╯┃"
+  echo "┃╰━╯┣━━╮┃╭━┳┻━┫╰━╯┃╭╮┫╭╮┃╭┫╭╮┣┫╭╮┃"
+  echo "┃╭━╮┃╰━╯┃┃╱╰━━┫╭━╮┃┃┃┃╰╯┃┃┃╰╯┃┃╰╯┃"
+  echo "╰╯╱╰┻━━━┻╯╱╱╱╱╰╯╱╰┻╯╰┻━━┻╯╰━━┻┻━━╯"
+  echo "      github: sevcator/ASF-Android"
+  echo ""
+  echo "ArchiSteamFarm in Android Device"
+  echo ""
   echo "All right!"
   echo ""
 elif [ "$arch" = "aarch64" ]; then
@@ -85,6 +114,16 @@ elif [ "$arch" = "aarch64" ]; then
   bash /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/arm64-dw.sh
   unzip /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/home/noroot/asf/ASF-linux-arm64.zip
   clear
+  echo "╭━━━┳━━━┳━━━╮╱╭━━━╮╱╱╱╱╭╮╱╱╱╱╱╱╱╭╮"
+  echo "┃╭━╮┃╭━╮┃╭━━╯╱┃╭━╮┃╱╱╱╱┃┃╱╱╱╱╱╱╱┃┃"
+  echo "┃┃╱┃┃╰━━┫╰━━╮╱┃┃╱┃┣━╮╭━╯┣━┳━━┳┳━╯┃"
+  echo "┃╰━╯┣━━╮┃╭━┳┻━┫╰━╯┃╭╮┫╭╮┃╭┫╭╮┣┫╭╮┃"
+  echo "┃╭━╮┃╰━╯┃┃╱╰━━┫╭━╮┃┃┃┃╰╯┃┃┃╰╯┃┃╰╯┃"
+  echo "╰╯╱╰┻━━━┻╯╱╱╱╱╰╯╱╰┻╯╰┻━━┻╯╰━━┻┻━━╯"
+  echo "      github: sevcator/ASF-Android"
+  echo ""
+  echo "ArchiSteamFarm in Android Device"
+  echo ""
   echo "All right!"
   echo ""
 else
