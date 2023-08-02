@@ -1,7 +1,7 @@
 # 🍃 ASF-Android
 ⚠️ I am and Archi not responsible for the use of this program, the consequences of your Steam accounts. I can help for fix the errors and problems of this program.
 
-[📄 Original: Steam Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2570297945) 
+📄 Original: [Steam Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2570297945) 
 
 Install [ArchiSteamFarm](https://github.com/JustArchiNET/ArchiSteamFarm) in Android using one command
 
