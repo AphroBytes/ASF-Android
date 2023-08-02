@@ -1,5 +1,5 @@
 # 🍃 ASF-Android
-⚠️ I am and Archi not responsible for the use of this program, the consequences of your Steam accounts. I can help for fix the errors and problems of this program.
+⚠️ I am and Archi not responsible for the use of this program, the consequences of your Steam accounts. I can help for fix the errors and problems of this script.
 
 📄 Original: [Steam Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2570297945) 
 
